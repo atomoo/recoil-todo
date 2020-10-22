@@ -69,25 +69,3 @@ export const useTodoStore = () => {
     return store;
 };
 
-
-const opts = {
-    atom: {
-        todos: [],
-        filter: ''
-    },
-    selector: {
-        filterTodos: ({todos, filter}) => {
-            if (filter) {
-                return todos.filter(todo => todo.detail.includes(filter));
-            }
-            return todos;
-        }
-    },
-    dispatcher: {
-
-    }
-}
-
-function useStore(opts) {
-    return opts.atom;
-}
